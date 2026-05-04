@@ -1,0 +1,46 @@
+@import "tailwindcss";
+@source "../../src/**/*.{js,jsx,ts,tsx}";
+
+@theme {
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display), sans-serif;
+  
+  --color-bento-blue: #EBF1FF;
+  --color-bento-pink: #FFF0F5;
+  --color-bento-green: #F0FFF4;
+  --color-bento-yellow: #FFFBEB;
+  --color-bento-purple: #F5F3FF;
+  --color-bento-text: #1A1A1A;
+  --color-bento-border: rgba(0, 0, 0, 0.08);
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+    background-color: #F9FAFB;
+    color: var(--color-bento-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .bento-card {
+    @apply bg-white rounded-[32px] border border-bento-border p-6 transition-all duration-300;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  }
+
+  .bento-card:hover {
+    @apply border-black/10 shadow-lg -translate-y-0.5;
+  }
+
+  .auth-input {
+    @apply w-full rounded-2xl border border-bento-border bg-white px-4 py-3 outline-none transition-all focus:border-black/20 focus:ring-4 focus:ring-black/5;
+  }
+
+  .btn-primary {
+    @apply rounded-2xl bg-black px-6 py-3 font-medium text-white transition-all hover:bg-black/80 active:scale-95;
+  }
+}
